@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="todo.js"></script>
+  </head>
+  <body>
+    <div id="userDetails">
+      <p>logged In user:</p>
+      <p id="username"></p>
+      <form id="logout" action="/deleteUser" method="POST">
+        <button type="submit">logout</button>
+      </form>
+    </div>
+    <h1>Todo App</h1>
+    <form id="list">
+      <input
+        type="text"
+        name="listName"
+        placeholder="Enter list name"
+        required
+      />
+      <button type="submit">CreateList</button>
+    </form>
+    <div id="todo"></div>
+
+    <template id="listTemp">
+      <div class="class-list">
+        <h1></h1>
+        <button id="listDel">Delete</button>
+        <form class="taskForm">
+          <input
+            type="text"
+            name="taskName"
+            placeholder="Enter task name"
+            required
+          />
+          <button type="submit">Add</button>
+        </form>
+      </div>
+    </template>
+
+    <template id="taskTemp">
+      <div class="class-task">
+        <p></p>
+        <button id="status"></button>
+        <button id="remove">Remove</button>
+      </div>
+    </template>
+  </body>
+</html>

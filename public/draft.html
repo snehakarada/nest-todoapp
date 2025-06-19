@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>The template Element</h1>
+
+    <p>
+      Click the button below to display the hidden content from the template
+      element.
+    </p>
+
+    <button onclick="showContent()">Show hidden content</button>
+
+    <template>
+      <h1 id="heading"></h1>
+      <img src="../design/todo.png" width="214" height="204" />
+    </template>
+
+    <script>
+      function showContent() {
+        let temp = document.getElementsByTagName("template")[0];
+        console.log(temp);
+        let clon = temp.content.cloneNode(true);
+        const h1 = clon.querySelector("h1");
+        console.log("h1", h1);
+        h1.innerText = "heading";
+        console.log("clone", clon);
+        document.body.appendChild(clon);
+      }
+    </script>
+  </body>
+</html>
